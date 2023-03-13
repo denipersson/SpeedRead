@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import logo from '../logo.png'
 
 const NavbarContainer = styled.div`
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  width: 100%;
   padding: 10px;
   background-color: #eee;
   border: 1px solid #B9bbbb;
@@ -20,7 +21,7 @@ const LogoHolder = styled.div`
 width: 50px;
 height: 50px;
 position: absolute;
-left: 50px;
+left: 10px;
 top: -5px;
 
 `

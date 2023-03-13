@@ -5,16 +5,22 @@ import ContactPage from './Pages/ContactPage';
 import FrontPage from './Pages/FrontPage';
 import NavBarContainer from './Views/NavBarContainer'
 
+import { Container } from './Styles/baseStyles';
+
 const App = () => {
   return (<div>
             
             <BrowserRouter>
             <NavBarContainer></NavBarContainer>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
+            <Container>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                </Routes>
+                
+                <p>SpeedRead (c) 2023 Deni Persson</p>
+              </Container>
             </BrowserRouter>
         </div>
   );

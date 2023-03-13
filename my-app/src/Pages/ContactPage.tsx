@@ -10,7 +10,7 @@ const OuterBox = styled.div`
   width: 95%;
 
 `;
-
+/*
 export default function ContactPage(){
 
     return(
@@ -22,6 +22,22 @@ export default function ContactPage(){
                 </StandardText>
                 <TextArea></TextArea>
                 <Button>Submit</Button>
+            </OuterBox>
+            
+            
+            
+        </Container>
+    )
+}*/
+export default function ContactPage(){
+
+    return(
+        <Container>
+            <OuterBox>
+                <StandardHeading>Contact</StandardHeading>
+                <StandardText>
+                    For inquiries, please e-mail deni.persson@gmail.com.
+                </StandardText>
             </OuterBox>
             
             

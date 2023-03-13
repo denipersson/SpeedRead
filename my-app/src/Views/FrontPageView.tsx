@@ -3,6 +3,7 @@ import { Button, Container, StandardText, StandardHeading, TextArea, TextBox } f
 import React, { useState } from 'react';
 import StyledImageUpload from '../Presenters/imageUpload';
 import LoadingSpinner from '../Styles/loadingSpinner';
+import {Ad} from './Ad';
 
 const OuterBox = styled.div`
   display: flex;
@@ -91,6 +92,8 @@ export default function FrontPageView(props: Props) {
           </OuterBox>
         )}
       </OuterBox>
+      {/*<Ad/>*/}
+
     </Container>
   );
 }
