@@ -1,4 +1,4 @@
-#About
+##About
 
 SpeedRead is an app designed to help make reading simpler.
                     Based on a new bionic reading method, by boldening the first part of each word in a text, it helps makes the text more readable. 
