@@ -1,5 +1,7 @@
 # SpeedRead
  A simple WebApp for speeding up the reading of texts. Especially useful for neurodivergent people.
+ 
+ Try it here: https://speedread-e9a08.web.app/
 
 # About
 
