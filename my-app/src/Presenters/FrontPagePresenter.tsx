@@ -7,8 +7,8 @@ export default function FrontPagePresenter() {
     async function extractImageText(imageUrl: string) {
         const worker = await createWorker();
         await worker.load();
-        await worker.loadLanguage('eng');
-        await worker.initialize('eng');
+        await worker.loadLanguage('swe');
+        await worker.initialize('swe');
         const { data: { text } } = await worker.recognize(imageUrl);
         await worker.terminate();
         let processedText:string = processText(text);
