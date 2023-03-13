@@ -89,6 +89,7 @@ export default function FrontPageView(props: Props) {
             ) : (
               <Button onClick={speedifyCB}>Speedify</Button>
             )}
+            <p>Important: iPhone LIVE photos will not work, disable it before uploading.</p>
           </OuterBox>
         )}
       </OuterBox>
