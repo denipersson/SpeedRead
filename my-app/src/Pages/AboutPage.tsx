@@ -8,8 +8,15 @@ const OuterBox = styled.div`
   padding: 5px;
   margin: 5px;
   width: 95%;
+  max-height: 80vh;
+  overflow-y: auto;
 
+  /* Hide scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
+
 
 export default function AboutPage(){
 

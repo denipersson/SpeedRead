@@ -4,14 +4,19 @@ import AboutPage from './Pages/AboutPage';
 import ContactPage from './Pages/ContactPage';
 import FrontPage from './Pages/FrontPage';
 import NavBarContainer from './Views/NavBarContainer'
-
+import styled from 'styled-components';
 import { Container } from './Styles/baseStyles';
+
+const BlankSpace = styled.div`
+height:60px;
+`
 
 const App = () => {
   return (<div>
             
             <BrowserRouter>
             <NavBarContainer></NavBarContainer>
+            <BlankSpace></BlankSpace>
             <Container>
                 <Routes>
                   <Route path="/" element={<Home />} />
