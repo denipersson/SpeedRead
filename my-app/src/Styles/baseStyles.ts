@@ -56,6 +56,7 @@ export const StandardText = styled.div`
   font-family: 'Open Sans', sans-serif;
   font-size: 30px;
   text-align: center;
+  margin:15px;
 `;
 
 // Button with custom styles

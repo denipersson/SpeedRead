@@ -19,7 +19,7 @@ export default function AboutPage(){
                 <StandardHeading>About SpeedRead</StandardHeading>
                 <StandardText>
                     SpeedRead is an app designed to help make reading simpler.
-                    Based on a new bionic reading method, by boldening the first part of each word in a text, it helps makes the text more readable. 
+                    Based on a new bionic reading method, by <b>bolde</b>ning <b>th</b>e <b>fir</b>st <b>pa</b>rt of <b>ea</b>ch <b>wo</b>rd <b>i</b>n <b>a</b> <b>te</b>xt, <b>i</b>t <b>hel</b>ps <b>ma</b>ke <b>th</b>e <b>te</b>xt <b>mo</b>re <b>read</b>able. 
                     The human brain will recognise the familiar words and complete them without having to finish reading it.
                     This can increase your reading speed significantly, as well as your productivity, while also decreasing brain-fog.
                     It can be especially useful for those suffering from neurodevelopmental disorders such as ADHD, as well as some cases of dyslexia.

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { Button, Container, StandardText, StandardHeading, TextArea, TextBox } from '../Styles/baseStyles';
 import React, { useState } from 'react';
-import DOMPurify from 'dompurify';
+import StyledImageUpload from '../Presenters/imageUpload';
+import LoadingSpinner from '../Styles/loadingSpinner';
 
 const OuterBox = styled.div`
   display: flex;
@@ -23,26 +24,45 @@ const InnerBox = styled.div`
   width: 95%;
 `;
 
+
 interface Props {
   processText: (text: string) => string;
+  extractImageText: (text: string) => Promise<string>;
 }
-
 export default function FrontPageView(props: Props) {
   const [showResult, setShowResult] = useState(false);
   const [inputBoxText, setInputBoxText] = useState('');
   const [resultText, setResultText] = useState('');
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  function handleImageUpload(image: File) {
+    setLoading(true);
+    props
+      .extractImageText(URL.createObjectURL(image))
+      .then((result) => {
+        setResultText(result);
+        setShowResult(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }
 
   function speedifyCB() {
     setShowResult(true);
-    const sanitizedText = DOMPurify.sanitize(props.processText(inputBoxText));
-    setResultText(sanitizedText);
-    console.log('speedified');
+    const result = props.processText(inputBoxText);
+    setResultText(result);
   }
 
   function resetCB() {
     setResultText('');
     setInputBoxText('');
     setShowResult(false);
+    setImageFile(null);
   }
 
   function handleInputChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
@@ -52,19 +72,39 @@ export default function FrontPageView(props: Props) {
   return (
     <Container>
       <OuterBox>
-        <StandardText>Insert the text to speedify</StandardText>
+        
         {showResult ? (
-            <OuterBox>
+          <OuterBox>
             <TextBox dangerouslySetInnerHTML={{ __html: resultText }}></TextBox>
             <Button onClick={resetCB}>Return</Button>
-            </OuterBox>
+          </OuterBox>
         ) : (
-            <OuterBox>
+          <OuterBox>
+            <StandardText>Insert text manually, or upload an image!</StandardText>
+            <StyledImageUpload onImageUpload={handleImageUpload} />
             <TextArea value={inputBoxText} onChange={handleInputChange} maxLength={10000} />
-            <Button onClick={speedifyCB}>Speedify</Button>
-            </OuterBox>
+            {loading ? (
+              <LoadingSpinner />
+            ) : (
+              <Button onClick={speedifyCB}>Speedify</Button>
+            )}
+          </OuterBox>
         )}
       </OuterBox>
     </Container>
   );
 }
+/*
+  async function convertImageToDataUrl(imageFile: File): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        if (event.target && typeof event.target.result === 'string') {
+          resolve(event.target.result);
+        } else {
+          reject(new Error('Failed to convert image to data URL'));
+        }
+      };
+      reader.readAsDataURL(imageFile);
+    });
+  }*/
