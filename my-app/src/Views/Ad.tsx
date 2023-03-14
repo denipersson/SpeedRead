@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const AdContainer = styled.div`
-  width: 100%;
-  height: 300px;
-  outline: 1px solid #d3d3d3;
-`;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  height: 200px;
 
+`;
+//  outline: 1px solid #d3d3d3;
 export const Ad = () => {
   const [isAdLoaded, setIsAdLoaded] = useState(false);
 
@@ -18,6 +21,7 @@ export const Ad = () => {
       script.async = true;
       script.onload = () => {
         setIsAdLoaded(true);
+        console.log("loaded ad");
       };
       document.body.appendChild(script);
     }

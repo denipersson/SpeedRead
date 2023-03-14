@@ -93,7 +93,7 @@ export default function FrontPageView(props: Props) {
           </OuterBox>
         )}
       </OuterBox>
-      {/*<Ad/>*/}
+      {<Ad/>}
 
     </Container>
   );
