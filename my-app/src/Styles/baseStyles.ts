@@ -60,7 +60,7 @@ export const StandardHeading = styled.h1`
 `;
 export const StandardText = styled.div`
   font-family: 'Open Sans', sans-serif;
-  font-size: 30px;
+  font-size: 26px;
   text-align: center;
   margin:15px;
 `;
