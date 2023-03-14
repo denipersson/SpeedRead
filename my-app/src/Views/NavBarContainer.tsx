@@ -4,6 +4,7 @@ import logo from '../logo.png'
 
 const NavbarContainer = styled.div`
   position: fixed;
+  top: 0; /* keep at the top of the page */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -34,16 +35,22 @@ const NavbarLink = styled(Link)`
   font-size: 18px;
 `;
 
+const Frame = styled.div`
+height:60px;
+width:1px;
+`
 const Navbar = () => {
-  return (
-    <NavbarContainer>
-        <LogoHolder>
-      <Logo src={logo} alt="Logo" />
-      </LogoHolder>
-      <NavbarLink to="/">Home</NavbarLink>
-      <NavbarLink to="/about">About</NavbarLink>
-      <NavbarLink to="/contact">Contact</NavbarLink>
-    </NavbarContainer>
+  return (<Frame>
+            <NavbarContainer>
+                <LogoHolder>
+              <Logo src={logo} alt="Logo" />
+              </LogoHolder>
+              <NavbarLink to="/">Home</NavbarLink>
+              <NavbarLink to="/about">About</NavbarLink>
+              <NavbarLink to="/contact">Contact</NavbarLink>
+            </NavbarContainer>
+          </Frame>
+         
   );
 };
 

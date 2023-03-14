@@ -7,9 +7,10 @@ export const Container = styled.div`
   justify-content:center;
   flex-direction: column;
   align-items:center;
-  height: 100vh;
+  height: 90%;
   width:90%;
   padding: 5px;
+  overflow-y: auto;
 `;
 
 export const TextBox = styled.div`
@@ -19,8 +20,13 @@ export const TextBox = styled.div`
   font-size: 1.2rem;
   width: 100%;
   box-sizing: border-box;
+  max-height: 100%;
+  overflow-y: auto;
   margin: 5px;
+
 `;
+
+
 
 export const TextArea = styled.textarea`
   padding: 0.5rem 1rem;

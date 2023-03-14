@@ -8,7 +8,9 @@ import styled from 'styled-components';
 import { Container } from './Styles/baseStyles';
 
 const BlankSpace = styled.div`
-height:60px;
+height:30px;
+margin-top: 30px; /* or the height of your navbar */
+padding-top: 20px; /* optional, to add some space between the navbar and content */
 `
 
 const App = () => {

@@ -5,6 +5,10 @@ import StyledImageUpload from '../Presenters/imageUpload';
 import LoadingSpinner from '../Styles/loadingSpinner';
 import {Ad} from './Ad';
 
+const BlankSpace = styled.div`
+height:30px;
+`
+
 const OuterBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,12 +17,9 @@ const OuterBox = styled.div`
   padding: 5px;
   margin: 5px;
   width: 95%;
+  max-height: 100%;
   overflow-y: auto;
 
-  /* Hide scrollbar */
-  ::-webkit-scrollbar {
-    display: none;
-  }
 `;
 
 
@@ -79,7 +80,6 @@ export default function FrontPageView(props: Props) {
   return (
     <Container>
       <OuterBox>
-        
         {showResult ? (
           <OuterBox>
             <TextBox dangerouslySetInnerHTML={{ __html: resultText }}></TextBox>
