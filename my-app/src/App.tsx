@@ -13,7 +13,8 @@ height:60px;
 
 const App = () => {
   return (<div>
-            
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9146672353679306"
+            crossOrigin="anonymous"></script>
             <BrowserRouter>
             <NavBarContainer></NavBarContainer>
             <BlankSpace></BlankSpace>

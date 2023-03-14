@@ -33,7 +33,7 @@ export const Ad = () => {
         <AdContainer>
           <ins
             className="adsbygoogle"
-            style={{ display: "block" }}
+            style={{ display: "block", width: "100%", height:"200px" }}
             data-ad-client="ca-pub-9146672353679306"
             data-ad-slot="8165977004"
             data-ad-format="auto"

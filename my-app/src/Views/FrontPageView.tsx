@@ -9,12 +9,18 @@ const OuterBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:center;
+  justify-self:center;
   padding: 5px;
   margin: 5px;
   width: 95%;
+  overflow-y: auto;
 
+  /* Hide scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
+
 
 const InnerBox = styled.div`
   display: flex;
