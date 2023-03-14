@@ -3,7 +3,9 @@ import { Button, Container, StandardText, StandardHeading, TextArea, TextBox } f
 import React, { useState } from 'react';
 import StyledImageUpload from '../Presenters/imageUpload';
 import LoadingSpinner from '../Styles/loadingSpinner';
-import {Ad} from './Ad';
+import {Adsense} from '@ctrl/react-adsense';
+
+
 
 const BlankSpace = styled.div`
 height:30px;
@@ -16,20 +18,10 @@ const OuterBox = styled.div`
   justify-self:center;
   padding: 5px;
   margin: 5px;
-  width: 95%;
   max-height: 100%;
   overflow-y: auto;
-
-`;
-
-
-const InnerBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 20px;
-  padding: 5px;
-  width: 95%;
+  /* Add the following style: */
+  width: 100%;
 `;
 
 
@@ -99,22 +91,16 @@ export default function FrontPageView(props: Props) {
           </OuterBox>
         )}
       </OuterBox>
-      {<Ad/>}
+      <Adsense
+        client="ca-pub-9146672353679306" // Replace with your Google AdSense publisher ID
+        slot="8165977004"
+        style={{ width: 400, height: 200 }}
+        format=""
+        responsive='true'
+        
+      />
+
 
     </Container>
   );
 }
-/*
-  async function convertImageToDataUrl(imageFile: File): Promise<string> {
-    return new Promise<string>((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        if (event.target && typeof event.target.result === 'string') {
-          resolve(event.target.result);
-        } else {
-          reject(new Error('Failed to convert image to data URL'));
-        }
-      };
-      reader.readAsDataURL(imageFile);
-    });
-  }*/

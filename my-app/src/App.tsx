@@ -27,6 +27,7 @@ const App = () => {
                   <Route path="/contact" element={<Contact />} />
                 </Routes>
                 
+<script></script>
                 <p>SpeedRead (c) 2023 Deni Persson</p>
               </Container>
             </BrowserRouter>
